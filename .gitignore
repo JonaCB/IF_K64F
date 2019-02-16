@@ -1,3 +1,12 @@
 .metadata/*
 RemoteLaunch/
 */*.apconfig
+Fibonacci/SaAnalysispointsManager.apconfig
+K64F_IC/SaAnalysispointsManager.apconfig
+K64F_OC/SaAnalysispointsManager.apconfig
+K64F_UART_LM/SaAnalysispointsManager.apconfig
+K64F_UART_MICROS/SaAnalysispointsManager.apconfig
+LCD_1/SaAnalysispointsManager.apconfig
+menor/SaAnalysispointsManager.apconfig
+micros1/SaAnalysispointsManager.apconfig
+Practica2/SaAnalysispointsManager.apconfig
