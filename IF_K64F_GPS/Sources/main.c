@@ -1,5 +1,5 @@
 #include "derivative.h" /* include peripheral declarations */
-
+//Testing
 unsigned char header[]={"$GPRMC,"};				//THIS IS THE STRING TO CMP TO KNOW IF IT'S A VALID DATA
 unsigned char *ptr;								//ITERATOR TO KEEP TRACK OF WHERE IT IS
 unsigned char buffer[80];
