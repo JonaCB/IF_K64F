@@ -1,6 +1,6 @@
 <Analysispoints>
 	<Name>AnalysispointsManager</Name>
-	<ProjectPath>C:/Users/jonac/Documents/ITESM/workspace/K64F_UART_LM/SaAnalysispointsManager.apconfig</ProjectPath>
+	<ProjectPath>C:/Users/Choza/Documents/GitHub/workspace/K64F_UART_LM/SaAnalysispointsManager.apconfig</ProjectPath>
 	<MaxNumberOfCores>1</MaxNumberOfCores>
 	<Comments>Analysispoints Manager</Comments>
 	<IgnoreAll>false</IgnoreAll>
