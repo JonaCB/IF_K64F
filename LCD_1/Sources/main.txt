@@ -1,0 +1,181 @@
+#include "derivative.h" /* include peripheral declarations */
+
+void LCD_write(unsigned char data, unsigned char RS, unsigned S4_8)
+{
+	//GPIOx_PDOR|=(RS<<y);		//
+	GPIOE_PDOR|=(RS<<10);
+	//GPIOa_PCOR=(1<<b);		//Pin E = 0;
+	GPIOE_PCOR = (1<<5);
+	//GPIOa_PSOR=(1<<b);		//Pin E = 1;
+	GPIOE_PSOR = (1<<5);
+	
+	//HIGH NIBBLE
+	if(data&(0x80)) 
+	{
+		GPIOB_PSOR=(1<<2);		//Pin D7 = 1;
+	}
+	else //GPIOc_PCOR=(1<<d);		//Pin D7 = 0;
+	{
+		GPIOB_PCOR = (1<<0);
+	}
+
+	if(data&(0x40)) //GPIOe_PSOR=(1<<f);		//Pin D6 = 1;
+	{
+		GPIOA_PSOR = (1<<1);
+	}
+	else  //GPIOe_PCOR=(1<<f);		//Pin D6 = 0;
+	{
+		GPIOA_PCOR = (1<<1);
+	}
+
+	if(data&(0x20)) //GPIOg_PSOR=(1<<h);		//Pin D5 = 1;
+	{
+		GPIOD_PSOR = (1<<4);
+	}
+	else  //GPIOg_PCOR=(1<<h);		//Pin D5 = 0;
+	{
+		GPIOD_PCOR = (1<<4);
+	}
+
+	if(data&(0x10)) //GPIOh_PSOR=(1<<j);		//Pin D4 = 1;
+	{
+		GPIOC_PCOR = (1<<3);
+	}
+	else //GPIOh_PCOR=(1<<j);		//Pin D4 = 0;
+	{
+		GPIOC_PSOR = (1<<3);
+	}
+	
+	/*if(data&(0x80)) //GPIOc_PSOR=(1<<d);		//Pin D7 = 1;
+	else //GPIOc_PCOR=(1<<d);		//Pin D7 = 0;
+		
+	if(data&(0x40)) //GPIOe_PSOR=(1<<f);		//Pin D6 = 1;
+	else  //GPIOe_PCOR=(1<<f);		//Pin D6 = 0;
+				
+	if(data&(0x20)) ;//GPIOg_PSOR=(1<<h);		//Pin D5 = 1;
+	else  //GPIOg_PCOR=(1<<h);		//Pin D5 = 0;
+	
+	if(data&(0x10)) ;//GPIOi_PSOR=(1<<j);		//Pin D4 = 1;
+	else //GPIOi_PCOR=(1<<j);		//Pin D4 = 0;
+	*/
+		
+	delay(tsp2);
+	
+	//GPIOa_PCOR=(1<<b);		//Pin E = 0;
+	GPIOE_PCOR = (1<<5);
+	delay(th2);
+	delay(tc_r);
+	
+	if(S4_8==1) 
+	{
+		data = data<<4;
+	}
+	
+	if(data&(0x80)) 
+	{
+		GPIOB_PSOR=(1<<2);		//Pin D7 = 1;
+	}
+	else //GPIOc_PCOR=(1<<d);		//Pin D7 = 0;
+	{
+		GPIOB_PCOR = (1<<0);
+	}
+			
+	if(data&(0x40)) //GPIOe_PSOR=(1<<f);		//Pin D6 = 1;
+	{
+		GPIOA_PSOR = (1<<1);
+	}
+	else  //GPIOe_PCOR=(1<<f);		//Pin D6 = 0;
+	{
+		GPIOA_PCOR = (1<<1);
+	}
+					
+	if(data&(0x20)) //GPIOg_PSOR=(1<<h);		//Pin D5 = 1;
+	{
+		GPIOD_PSOR = (1<<4);
+	}
+	else  //GPIOg_PCOR=(1<<h);		//Pin D5 = 0;
+	{
+		GPIOD_PCOR = (1<<4);
+	}
+		
+	if(data&(0x10)) //GPIOh_PSOR=(1<<j);		//Pin D4 = 1;
+	{
+		GPIOC_PCOR = (1<<3);
+	}
+	else //GPIOh_PCOR=(1<<j);		//Pin D4 = 0;
+	{
+		GPIOC_PSOR = (1<<3);
+	}
+	
+	//GPIOa_PSOR=(1<<b);		//Pin E = 1;
+	GPIOE_PSOR = (1<<5);
+
+//CHECAR ESTO CON LA DATASHEET DE LA LCD
+	delay();
+	delay(tsp2);
+
+	//GPIOa_PCOR=(1<<b);		//Pin E = 0;
+	delay(th2);
+	delay(tc_r);
+}
+
+void LCD_init(void)
+{
+	//PUERTOA
+	//PUERTOB
+	//PUERTOC
+	//PUERTOD
+	//PUERTOE
+	
+	//HABILITAR CLOCKS PARA PUERTOS Y LPTMR0
+	SIM_SCGC5 = 0x00003E01;
+	
+	//CONFIGURAR PUERTOS COMO GPIO
+	/*
+	 * PuertoB2 = 3
+	 * PuertoA1 = 2
+	 * PuertoD4 = 1
+	 * PuertoC3 = 0
+	 * PuertoE5 = ENABLE
+	 * PuertoE10 = RS
+	 */
+	
+	PORTA_PCR1 = 0x00000100;
+	PORTB_PCR2 = 0x00000100;
+	PORTC_PCR3 = 0x00000100;
+	PORTD_PCR4 = 0x00000100;
+	PORTE_PCR5 = 0x00000100;
+	PORTE_PCR10 = 0x00000100;
+	
+	//PRECARGAR VALORES DEL PUERTO COMO 0 PARA EVITAR MANDAR SEÑALES ANTES DE TIEMPO
+	GPIOA_PDOR = 0x00000000;
+	GPIOB_PDOR = 0x00000000;
+	GPIOC_PDOR = 0x00000000;
+	GPIOD_PDOR = 0x00000000;
+	GPIOE_PDOR = 0x00000000;
+	
+	//CONFIGURAR PUERTOS COMO OUTPUT
+	GPIOA_PDDR = 0x00000001; //(1<<1);
+	GPIOB_PDDR = 0x00000002; //(1<<2);
+	GPIOC_PDDR = 0x00000004; //(1<<3);
+	GPIOD_PDDR = 0x00000008; //(1<<4);
+	GPIOE_PDDR = 0x00000410; //(1<<5)+(1<<10);
+	
+	//Reset LCD
+	delay(100);
+	LCD_write(3,0);		//LCD(data,RS)
+	
+	delay(20);
+	LCD_write(3,0);		//LCD(data,RS)
+	
+	delay(20);
+	LCD_write(3,0);		//LCD(data,RS)
+	//Reset LCD
+	
+	
+}
+
+int main(void)
+{
+	
+}
