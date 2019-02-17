@@ -5,6 +5,6 @@
 ################################################################################
 
 export GNU_Make_Install_DirEnv=$(CWInstallLocationEnv)/gnu/bin
-export ProjDirPath=C:/Users/jonac/Documents/ITESM/workspace/I2C
+export ProjDirPath=C:/Users/jonac/Documents/ITESM/workspace/IF_K64F_I2C_HW
 export CWInstallLocationEnv=C:/Freescale/CW MCU v10.7
 export ARMSourceryDirEnv=$(CWInstallLocationEnv)/Cross_Tools/arm-none-eabi-gcc-4_7_3/bin
