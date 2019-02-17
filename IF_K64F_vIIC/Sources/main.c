@@ -152,7 +152,7 @@ unsigned char vIIC_rec_byte(void)
 		SCLEN
 		unosnops();
 		temp<<=1;
-		if(GPIOC_PDIR&=(1<<10))temp++;
+		if(GPIOC_PDIR&(1<<10))temp++;
 		SCLDIS
 		unosnops();
 	}while(--cont);
