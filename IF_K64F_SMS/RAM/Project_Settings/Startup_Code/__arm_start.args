@@ -5,8 +5,8 @@
 -g3
 -gdwarf-2
 -gstrict-dwarf
--I"C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_vIIC/Project_Headers"
--I"C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_vIIC/Project_Settings/Startup_Code"
+-I"C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_SMS/Project_Headers"
+-I"C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_SMS/Project_Settings/Startup_Code"
 -I"D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include"
 -I"D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/EWL_Runtime/include"
 -O0

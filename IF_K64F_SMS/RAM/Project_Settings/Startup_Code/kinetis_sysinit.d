@@ -4,8 +4,8 @@ Project_Settings/Startup_Code/kinetis_sysinit.o: \
  D:/Micros/CW\ for\ MCU\ 10.7/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/common.prefix \
  D:/Micros/CW\ for\ MCU\ 10.7/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_c_version.h \
  ../Project_Settings/Startup_Code/kinetis_sysinit.h \
- C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_vIIC/Project_Headers/derivative.h \
- C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_vIIC/Project_Headers/MK64F12.h \
+ C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_SMS/Project_Headers/derivative.h \
+ C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_SMS/Project_Headers/MK64F12.h \
  D:/Micros/CW\ for\ MCU\ 10.7/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdint.h \
  D:/Micros/CW\ for\ MCU\ 10.7/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/ansi_parms.h \
  D:/Micros/CW\ for\ MCU\ 10.7/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewlGlobals.h \
@@ -23,9 +23,9 @@ D:/Micros/CW\ for\ MCU\ 10.7/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/includ
 
 ../Project_Settings/Startup_Code/kinetis_sysinit.h:
 
-C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_vIIC/Project_Headers/derivative.h:
+C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_SMS/Project_Headers/derivative.h:
 
-C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_vIIC/Project_Headers/MK64F12.h:
+C:/Users/Choza/Documents/GitHub/workspace/IF_K64F_SMS/Project_Headers/MK64F12.h:
 
 D:/Micros/CW\ for\ MCU\ 10.7/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdint.h:
 
