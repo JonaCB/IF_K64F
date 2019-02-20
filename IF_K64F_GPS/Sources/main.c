@@ -15,6 +15,7 @@ void send_uart (unsigned char dato);
 void delay (void);
 unsigned char u8UART_receive (void);
 void vUART_receive_buffer (void);
+
 //void vUART_send_msg_mux (void);
 //unsigned char u8parser1 (void);
 
@@ -75,7 +76,7 @@ unsigned char u8UART_receive (void)
 }
 
 //CHANGE TO USE INTERRUPTS
-void vUART_receive_buffer (void)
+void vUART_receive_buffer(void)
 {
 	unsigned char i=0;
 	unsigned long cont=0;
