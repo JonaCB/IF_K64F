@@ -4,7 +4,7 @@
 #define I2C_START I2C_C1_MST_MASK
 #define I2C_TX I2C_C1_TX_MASK
 //RTC DEFINES
-#define SLAVE_ADDR 0x68
+#define SLAVE_ADDR 0xD0
 #define SEC_ADDR 0x00
 #define MIN_ADDR 0x01
 #define HR_ADDR 0x02
@@ -30,9 +30,14 @@ int main(void)
 	I2C_init();
 	
 	I2C_bytetx(0x10, MIN_ADDR);
-	m = I2C_byterx(MIN_ADDR);
+	//m = I2C_byterx(MIN_ADDR);
 	
-	for(;;);
+	for(;;)
+	{
+		I2C_bytetx(0x10, MIN_ADDR);
+		I2C_byterx(MIN_ADDR);
+		unosnops(50000);
+	}
 	return 0;
 }
 
@@ -45,7 +50,7 @@ void I2C_init(void)
 	PORTE_PCR25 |= (1<<10)+(1<<8);			//ENABLE PORT AS I2C_SDA
 	
 	//I2C CONFIGURATION
-	I2C0_F = 0x18;							//SDA TIME 1.125us, START 4.125us, STOP 5.750us
+	I2C0_F = 0x56;							//SDA TIME 1.125us, START 4.125us, STOP 5.750us
 	I2C0_C1 |= (1<<7);
 	
 	
@@ -99,7 +104,7 @@ uint8_t I2C_byterx(uint8_t addr)
 	I2C_wait();								//WAIT ACK (Check whether to wait ack or send ack 0)
 	
 	I2C0_C1&=~I2C_TX;						//SET AS RX
-	I2C0_C1&=~(1<<3);						//DISABLE ACK TRANSMISSION
+	//I2C0_C1&=~(1<<3);						//DISABLE ACK TRANSMISSION
 	
 	data = I2C0_D;							//READ I2C0_D 
 	I2C_wait();								//WAIT INTERRUPT
