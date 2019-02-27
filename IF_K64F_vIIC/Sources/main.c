@@ -315,7 +315,7 @@ unsigned char vIIC_page_read(unsigned char start_dir, unsigned char* datos, uint
 				vIIC_stop();
 				vIIC_start();
 				vIIC_send_byte(SLAVE_ADDR|1);
-				vIIC_ack_out(0);
+				vIIC_ack_out(1);
 				for(i=0; i<num_datos;i++)
 				{
 					datos[i]=vIIC_rec_byte();
