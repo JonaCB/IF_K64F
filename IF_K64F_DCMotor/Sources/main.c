@@ -90,7 +90,7 @@ void LPTimer_IRQHandler(void)
 	LPTMR0_CSR |= (1<<7);
 	ADC1_SC1A |= (1<<6);
 	
-	/*
+	
 	if(GPIOC_PDIR&(1<<10)){
 		GPIOE_PSOR |= 1<<24;
 		GPIOE_PCOR |=1<<25;
@@ -99,7 +99,8 @@ void LPTimer_IRQHandler(void)
 		GPIOE_PCOR |= 1<<24;
 		GPIOE_PSOR |=1<<25;
 	}
-	*/
+	
+	
 }
 
 void FTM0_IRQHandler(void)

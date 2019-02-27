@@ -53,10 +53,6 @@ Discarded input sections
                 0x00000000        0x8 ./Sources/main.o
  .data.cmpmens1
                 0x00000000        0x4 ./Sources/main.o
- .text.u8UART_receive
-                0x00000000       0x58 ./Sources/main.o
- .text.vUART_receive_buffer
-                0x00000000       0x4c ./Sources/main.o
  .text.u8parser1
                 0x00000000       0xb8 ./Sources/main.o
  .text.u8parser2
@@ -527,24 +523,24 @@ END GROUP
                 0x000003b0       0x3b D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 OUTPUT(IF_K64F_SMS.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x2890
+.debug_info     0x00000000     0x2843
  .debug_info    0x00000000      0x387 ./Project_Settings/Startup_Code/kinetis_sysinit.o
  .debug_info    0x00000387      0x12a ./Project_Settings/Startup_Code/__arm_start.o
  .debug_info    0x000004b1       0x54 ./Project_Settings/Startup_Code/__arm_end.o
- .debug_info    0x00000505      0x872 ./Sources/main.o
- .debug_info    0x00000d77       0xe8 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
- .debug_info    0x00000e5f       0xec D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
- .debug_info    0x00000f4b      0x135 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
- .debug_info    0x00001080      0x50e D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
- .debug_info    0x0000158e      0x565 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
- .debug_info    0x00001af3      0x306 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
- .debug_info    0x00001df9      0x1d6 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
- .debug_info    0x00001fcf      0x108 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
- .debug_info    0x000020d7       0xeb D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
- .debug_info    0x000021c2      0x120 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
- .debug_info    0x000022e2      0x136 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
- .debug_info    0x00002418      0x2de D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
- .debug_info    0x000026f6      0x19a D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+ .debug_info    0x00000505      0x825 ./Sources/main.o
+ .debug_info    0x00000d2a       0xe8 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+ .debug_info    0x00000e12       0xec D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+ .debug_info    0x00000efe      0x135 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+ .debug_info    0x00001033      0x50e D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+ .debug_info    0x00001541      0x565 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+ .debug_info    0x00001aa6      0x306 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+ .debug_info    0x00001dac      0x1d6 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+ .debug_info    0x00001f82      0x108 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+ .debug_info    0x0000208a       0xeb D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+ .debug_info    0x00002175      0x120 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+ .debug_info    0x00002295      0x136 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+ .debug_info    0x000023cb      0x2de D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+ .debug_info    0x000026a9      0x19a D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 
 .debug_abbrev   0x00000000      0xf28
  .debug_abbrev  0x00000000       0xf6 ./Project_Settings/Startup_Code/kinetis_sysinit.o
@@ -565,26 +561,26 @@ OUTPUT(IF_K64F_SMS.elf elf32-littlearm)
  .debug_abbrev  0x00000c16      0x1db D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
  .debug_abbrev  0x00000df1      0x137 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 
-.debug_loc      0x00000000     0x21ab
+.debug_loc      0x00000000     0x2147
  .debug_loc     0x00000000       0x58 ./Project_Settings/Startup_Code/kinetis_sysinit.o
  .debug_loc     0x00000058       0x2c ./Project_Settings/Startup_Code/__arm_start.o
  .debug_loc     0x00000084       0x38 ./Project_Settings/Startup_Code/__arm_end.o
- .debug_loc     0x000000bc      0x2a8 ./Sources/main.o
- .debug_loc     0x00000364       0x3e D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
- .debug_loc     0x000003a2       0x64 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
- .debug_loc     0x00000406      0x12c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
- .debug_loc     0x00000532      0xbdc D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
- .debug_loc     0x0000110e      0x8b6 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
- .debug_loc     0x000019c4      0x18e D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
- .debug_loc     0x00001b52      0x2bb D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
- .debug_loc     0x00001e0d       0x7c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
- .debug_loc     0x00001e89       0x26 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
- .debug_loc     0x00001eaf       0x62 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
- .debug_loc     0x00001f11       0x9d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
- .debug_loc     0x00001fae      0x144 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
- .debug_loc     0x000020f2       0xb9 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+ .debug_loc     0x000000bc      0x244 ./Sources/main.o
+ .debug_loc     0x00000300       0x3e D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+ .debug_loc     0x0000033e       0x64 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+ .debug_loc     0x000003a2      0x12c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+ .debug_loc     0x000004ce      0xbdc D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+ .debug_loc     0x000010aa      0x8b6 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+ .debug_loc     0x00001960      0x18e D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+ .debug_loc     0x00001aee      0x2bb D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+ .debug_loc     0x00001da9       0x7c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+ .debug_loc     0x00001e25       0x26 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+ .debug_loc     0x00001e4b       0x62 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+ .debug_loc     0x00001ead       0x9d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+ .debug_loc     0x00001f4a      0x144 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+ .debug_loc     0x0000208e       0xb9 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 
-.debug_aranges  0x00000000      0x360
+.debug_aranges  0x00000000      0x350
  .debug_aranges
                 0x00000000       0x28 ./Project_Settings/Startup_Code/kinetis_sysinit.o
  .debug_aranges
@@ -592,33 +588,33 @@ OUTPUT(IF_K64F_SMS.elf elf32-littlearm)
  .debug_aranges
                 0x00000058       0x20 ./Project_Settings/Startup_Code/__arm_end.o
  .debug_aranges
-                0x00000078       0x80 ./Sources/main.o
+                0x00000078       0x70 ./Sources/main.o
  .debug_aranges
-                0x000000f8       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+                0x000000e8       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
  .debug_aranges
-                0x00000118       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+                0x00000108       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
  .debug_aranges
-                0x00000138       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+                0x00000128       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
  .debug_aranges
-                0x00000158       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+                0x00000148       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
  .debug_aranges
-                0x00000180       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+                0x00000170       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
  .debug_aranges
-                0x000001a0       0x88 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+                0x00000190       0x88 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
  .debug_aranges
-                0x00000228       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+                0x00000218       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
  .debug_aranges
-                0x00000248       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+                0x00000238       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
  .debug_aranges
-                0x00000268       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+                0x00000258       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
  .debug_aranges
-                0x00000288       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+                0x00000278       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
  .debug_aranges
-                0x000002a8       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+                0x00000298       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
  .debug_aranges
-                0x000002d0       0x60 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+                0x000002c0       0x60 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
  .debug_aranges
-                0x00000330       0x30 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+                0x00000320       0x30 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 
 .debug_macinfo  0x00000000    0xcae30
  .debug_macinfo
@@ -630,59 +626,59 @@ OUTPUT(IF_K64F_SMS.elf elf32-littlearm)
  .debug_macinfo
                 0x0006918e    0x61ca2 ./Sources/main.o
 
-.debug_line     0x00000000     0x18d3
+.debug_line     0x00000000     0x18a9
  .debug_line    0x00000000      0x23f ./Project_Settings/Startup_Code/kinetis_sysinit.o
  .debug_line    0x0000023f      0x2c2 ./Project_Settings/Startup_Code/__arm_start.o
  .debug_line    0x00000501      0x299 ./Project_Settings/Startup_Code/__arm_end.o
- .debug_line    0x0000079a      0x31e ./Sources/main.o
- .debug_line    0x00000ab8       0x94 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
- .debug_line    0x00000b4c       0x8f D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
- .debug_line    0x00000bdb       0xcd D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
- .debug_line    0x00000ca8      0x2b4 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
- .debug_line    0x00000f5c      0x2df D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
- .debug_line    0x0000123b      0x1a9 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
- .debug_line    0x000013e4      0x11b D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
- .debug_line    0x000014ff       0x7d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
- .debug_line    0x0000157c       0x83 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
- .debug_line    0x000015ff       0x9f D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
- .debug_line    0x0000169e       0x67 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
- .debug_line    0x00001705      0x125 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
- .debug_line    0x0000182a       0xa9 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+ .debug_line    0x0000079a      0x2f4 ./Sources/main.o
+ .debug_line    0x00000a8e       0x94 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+ .debug_line    0x00000b22       0x8f D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+ .debug_line    0x00000bb1       0xcd D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+ .debug_line    0x00000c7e      0x2b4 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+ .debug_line    0x00000f32      0x2df D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+ .debug_line    0x00001211      0x1a9 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+ .debug_line    0x000013ba      0x11b D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+ .debug_line    0x000014d5       0x7d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+ .debug_line    0x00001552       0x83 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+ .debug_line    0x000015d5       0x9f D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+ .debug_line    0x00001674       0x67 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+ .debug_line    0x000016db      0x125 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+ .debug_line    0x00001800       0xa9 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 
-.debug_str      0x00000000      0xe30
+.debug_str      0x00000000      0xe13
  .debug_str     0x00000000      0x27b ./Project_Settings/Startup_Code/kinetis_sysinit.o
                                 0x2a2 (size before relaxing)
  .debug_str     0x0000027b       0x85 ./Project_Settings/Startup_Code/__arm_start.o
                                 0x1a3 (size before relaxing)
  .debug_str     0x00000300       0x41 ./Project_Settings/Startup_Code/__arm_end.o
                                  0xda (size before relaxing)
- .debug_str     0x00000341      0x273 ./Sources/main.o
-                                0x3d1 (size before relaxing)
- .debug_str     0x000005b4       0x5a D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+ .debug_str     0x00000341      0x256 ./Sources/main.o
+                                0x3ad (size before relaxing)
+ .debug_str     0x00000597       0x5a D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
                                 0x157 (size before relaxing)
- .debug_str     0x0000060e       0x23 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+ .debug_str     0x000005f1       0x23 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
                                 0x140 (size before relaxing)
- .debug_str     0x00000631       0x2d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+ .debug_str     0x00000614       0x2d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
                                 0x152 (size before relaxing)
- .debug_str     0x0000065e      0x233 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+ .debug_str     0x00000641      0x233 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
                                 0x3b3 (size before relaxing)
- .debug_str     0x00000891      0x184 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+ .debug_str     0x00000874      0x184 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
                                 0x3f9 (size before relaxing)
- .debug_str     0x00000a15       0x9d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+ .debug_str     0x000009f8       0x9d D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
                                 0x1bc (size before relaxing)
- .debug_str     0x00000ab2       0x61 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+ .debug_str     0x00000a95       0x61 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
                                 0x1fb (size before relaxing)
- .debug_str     0x00000b13       0x1c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+ .debug_str     0x00000af6       0x1c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
                                 0x137 (size before relaxing)
- .debug_str     0x00000b2f       0x1c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+ .debug_str     0x00000b12       0x1c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
                                 0x140 (size before relaxing)
- .debug_str     0x00000b4b       0x1c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+ .debug_str     0x00000b2e       0x1c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
                                 0x148 (size before relaxing)
- .debug_str     0x00000b67      0x126 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+ .debug_str     0x00000b4a      0x126 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
                                 0x181 (size before relaxing)
- .debug_str     0x00000c8d      0x102 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+ .debug_str     0x00000c70      0x102 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
                                 0x1bf (size before relaxing)
- .debug_str     0x00000d8f       0xa1 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+ .debug_str     0x00000d72       0xa1 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
                                 0x13c (size before relaxing)
 
 .comment        0x00000000       0x79
@@ -705,21 +701,21 @@ OUTPUT(IF_K64F_SMS.elf elf32-littlearm)
  .comment       0x00000000       0x7a D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
  .comment       0x00000000       0x7a D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 
-.debug_frame    0x00000000      0x62c
+.debug_frame    0x00000000      0x5f4
  .debug_frame   0x00000000       0x40 ./Project_Settings/Startup_Code/kinetis_sysinit.o
  .debug_frame   0x00000040       0x4c ./Project_Settings/Startup_Code/__arm_start.o
  .debug_frame   0x0000008c       0x2c ./Project_Settings/Startup_Code/__arm_end.o
- .debug_frame   0x000000b8      0x188 ./Sources/main.o
- .debug_frame   0x00000240       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
- .debug_frame   0x00000268       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
- .debug_frame   0x00000290       0x2c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
- .debug_frame   0x000002bc       0x64 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
- .debug_frame   0x00000320       0x3c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
- .debug_frame   0x0000035c       0xf0 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
- .debug_frame   0x0000044c       0x3c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
- .debug_frame   0x00000488       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
- .debug_frame   0x000004a8       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
- .debug_frame   0x000004c8       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
- .debug_frame   0x000004e8       0x40 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
- .debug_frame   0x00000528       0xbc D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
- .debug_frame   0x000005e4       0x48 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+ .debug_frame   0x000000b8      0x150 ./Sources/main.o
+ .debug_frame   0x00000208       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+ .debug_frame   0x00000230       0x28 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+ .debug_frame   0x00000258       0x2c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+ .debug_frame   0x00000284       0x64 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+ .debug_frame   0x000002e8       0x3c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+ .debug_frame   0x00000324       0xf0 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+ .debug_frame   0x00000414       0x3c D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+ .debug_frame   0x00000450       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+ .debug_frame   0x00000470       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+ .debug_frame   0x00000490       0x20 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+ .debug_frame   0x000004b0       0x40 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+ .debug_frame   0x000004f0       0xbc D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+ .debug_frame   0x000005ac       0x48 D:/Micros/CW for MCU 10.7/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)

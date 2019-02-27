@@ -47,25 +47,6 @@ void unosnops(void)
 	};
 }
 
-unsigned char u8UART_receive (void)
-{
-	do{}while (!(UART1_S1&0x20));
-
-	do{}while (!(UART0_S1&0x80));  //Eco a la PC
-	UART0_D=UART1_D;
-
-	return UART1_D;
-}
-
-void vUART_receive_buffer (void)
-{
-	unsigned char i=0;
-	unsigned long cont=0;
-	do{
-		buffer[i]=u8UART_receive();
-	}while ((i<80)&& (++cont<=10000000));
-}
-
 void vUART_send_msg_AT (void)
 {
 	unsigned char i=0;
