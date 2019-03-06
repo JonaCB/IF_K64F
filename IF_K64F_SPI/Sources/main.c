@@ -21,4 +21,5 @@ void SPI_init(void)
 	PORTD_PCR2 = 0x00000200;
 	PORTD_PCR3 = 0x00000200;
 	SPI0_MCR = (1<<31)+(1<<30);
+	SPI0_CTAR0 = 
 }

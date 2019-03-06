@@ -1,6 +1,6 @@
 <Analysispoints>
 	<Name>AnalysispointsManager</Name>
-	<ProjectPath>C:/Users/Choza/Documents/GitHub/workspace/Fibonacci/SaAnalysispointsManager.apconfig</ProjectPath>
+	<ProjectPath>C:/Users/jonac/Documents/ITESM/workspace/Fibonacci/SaAnalysispointsManager.apconfig</ProjectPath>
 	<MaxNumberOfCores>1</MaxNumberOfCores>
 	<Comments>Analysispoints Manager</Comments>
 	<IgnoreAll>false</IgnoreAll>
