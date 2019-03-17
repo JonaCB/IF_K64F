@@ -24,7 +24,8 @@ int main(void)
 	return 0;
 }
 
-void UART0_Status_IRQHandler(void){
+void UART0_Status_IRQHandler(void)
+{
 	if(UART0_S1 &(0x40))
 	{
 		UART0_D = *ptr++;
@@ -33,7 +34,6 @@ void UART0_Status_IRQHandler(void){
 			UART0_C2 &= 0x0F;
 		}
 	}
-		
 }
 
 void ADC1_IRQHandler(void)
@@ -56,7 +56,8 @@ void LPTimer_IRQHandler()
 	ADC1_SC1A |=(1<<6);	
 }
 
-void UART_init(){
+void UART_init()
+{
 	//ENABLE UART INTERFACE CLOCK
 	SIM_SCGC4 |= (1<<10);
 	
