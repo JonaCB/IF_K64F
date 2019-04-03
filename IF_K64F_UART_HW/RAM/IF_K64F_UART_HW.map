@@ -141,8 +141,8 @@ LOAD ./Project_Settings/Startup_Code/kinetis_sysinit.o
 LOAD ./Project_Settings/Startup_Code/__arm_start.o
 LOAD ./Project_Settings/Startup_Code/__arm_end.o
 LOAD ./Sources/main.o
-                0x1fff0c78                __pformatter = __pformatter_
-                [0x1fff1070]                __sformatter = __sformatter
+                0x1fff0cfc                __pformatter = __pformatter_
+                [0x1fff10f4]                __sformatter = __sformatter
 START GROUP
 LOAD C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a
 LOAD C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libm.a
@@ -163,7 +163,7 @@ END GROUP
                 0x1fff0000                InterruptVector
                 0x1fff0198                . = ALIGN (0x4)
 
-.text           0x1fff0198     0x1ac4
+.text           0x1fff0198     0x1b48
                 0x1fff0198                . = ALIGN (0x4)
  *(.text)
  *(.text*)
@@ -273,82 +273,82 @@ END GROUP
  .text._ExitProcess
                 0x1fff0248        0xc ./Project_Settings/Startup_Code/__arm_end.o
                 0x1fff0248                _ExitProcess
- .text.main     0x1fff0254      0x16c ./Sources/main.o
+ .text.main     0x1fff0254      0x1b4 ./Sources/main.o
                 0x1fff0254                main
  .text.UART_init
-                0x1fff03c0      0x110 ./Sources/main.o
-                0x1fff03c0                UART_init
+                0x1fff0408      0x110 ./Sources/main.o
+                0x1fff0408                UART_init
  .text.UART3_Status_IRQHandler
-                0x1fff04d0      0x4e0 ./Sources/main.o
-                0x1fff04d0                UART3_Status_IRQHandler
- .text.delay    0x1fff09b0       0x78 ./Sources/main.o
-                0x1fff09b0                delay
- .text.exit     0x1fff0a28       0x38 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
-                0x1fff0a28                exit
- .text.memset   0x1fff0a60        0xc C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
-                0x1fff0a60                memset
+                0x1fff0518      0x51c ./Sources/main.o
+                0x1fff0518                UART3_Status_IRQHandler
+ .text.delay    0x1fff0a34       0x78 ./Sources/main.o
+                0x1fff0a34                delay
+ .text.exit     0x1fff0aac       0x38 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+                0x1fff0aac                exit
+ .text.memset   0x1fff0ae4        0xc C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+                0x1fff0ae4                memset
  .text.__fill_mem
-                0x1fff0a6c       0x76 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
-                0x1fff0a6c                __fill_mem
+                0x1fff0af0       0x76 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+                0x1fff0af0                __fill_mem
  .text.long2str.isra.0
-                0x1fff0ae2      0x196 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+                0x1fff0b66      0x196 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
  .text.__pformatter_
-                0x1fff0c78      0x3f8 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
-                0x1fff0c78                __pformatter_
+                0x1fff0cfc      0x3f8 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+                0x1fff0cfc                __pformatter_
  .text.__sformatter
-                0x1fff1070      0x6f4 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
-                0x1fff1070                __sformatter
- .text.isalpha  0x1fff1764       0x1c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
-                0x1fff1764                isalpha
- .text.isspace  0x1fff1780       0x1c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
-                0x1fff1780                isspace
- .text.toupper  0x1fff179c        0xc C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
-                0x1fff179c                toupper
+                0x1fff10f4      0x6f4 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+                0x1fff10f4                __sformatter
+ .text.isalpha  0x1fff17e8       0x1c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+                0x1fff17e8                isalpha
+ .text.isspace  0x1fff1804       0x1c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+                0x1fff1804                isspace
+ .text.toupper  0x1fff1820        0xc C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+                0x1fff1820                toupper
  .text.__strtoul
-                0x1fff17a8      0x214 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
-                0x1fff17a8                __strtoul
- .text.strchr   0x1fff19bc       0x1a C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
-                0x1fff19bc                strchr
- .text.strlen   0x1fff19d6       0x10 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
-                0x1fff19d6                strlen
- .text.memchr   0x1fff19e6       0x18 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
-                0x1fff19e6                memchr
- *fill*         0x1fff19fe        0x2 00
+                0x1fff182c      0x214 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+                0x1fff182c                __strtoul
+ .text.strchr   0x1fff1a40       0x1a C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+                0x1fff1a40                strchr
+ .text.strlen   0x1fff1a5a       0x10 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+                0x1fff1a5a                strlen
+ .text.memchr   0x1fff1a6a       0x18 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+                0x1fff1a6a                memchr
+ *fill*         0x1fff1a82        0x2 00
  .text.__init_cpp
-                0x1fff1a00       0x4c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
-                0x1fff1a00                __init_cpp
+                0x1fff1a84       0x4c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+                0x1fff1a84                __init_cpp
  .text.__fini_cpp
-                0x1fff1a4c       0x34 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
-                0x1fff1a4c                __fini_cpp
+                0x1fff1ad0       0x34 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+                0x1fff1ad0                __fini_cpp
  .text.__destroy_global_chain
-                0x1fff1a80       0x18 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
-                0x1fff1a80                __destroy_global_chain
+                0x1fff1b04       0x18 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+                0x1fff1b04                __destroy_global_chain
  .text.__init_registers
-                0x1fff1a98       0x24 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
-                0x1fff1a98                __init_registers
+                0x1fff1b1c       0x24 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+                0x1fff1b1c                __init_registers
  .text.__fp_init
-                0x1fff1abc       0x1c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
-                0x1fff1abc                __fp_init
+                0x1fff1b40       0x1c C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+                0x1fff1b40                __fp_init
  .text.__init_user
-                0x1fff1ad8        0x4 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
-                0x1fff1ad8                __init_user
+                0x1fff1b5c        0x4 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+                0x1fff1b5c                __init_user
  .text.__copy_rom_section
-                0x1fff1adc       0x44 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
-                0x1fff1adc                __copy_rom_section
+                0x1fff1b60       0x44 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+                0x1fff1b60                __copy_rom_section
  .text.__copy_rom_sections_to_ram
-                0x1fff1b20       0x30 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
-                0x1fff1b20                __copy_rom_sections_to_ram
+                0x1fff1ba4       0x30 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+                0x1fff1ba4                __copy_rom_sections_to_ram
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x1fff1b50        0x1 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+                0x1fff1bd4        0x1 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
  .rodata.CSWTCH.20
-                0x1fff1b51        0x5 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+                0x1fff1bd5        0x5 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
  .rodata.CSWTCH.21
-                0x1fff1b56        0x5 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+                0x1fff1bda        0x5 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
  .rodata.__aeabi_ctype_table_C
-                0x1fff1b5b      0x101 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
-                0x1fff1b5b                __aeabi_ctype_table_C
+                0x1fff1bdf      0x101 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+                0x1fff1bdf                __aeabi_ctype_table_C
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
@@ -356,61 +356,61 @@ END GROUP
  *(.eh_frame)
  *(.init)
  *(.fini)
-                0x1fff1c5c                . = ALIGN (0x4)
-                0x1fff1c5c                _etext = .
+                0x1fff1ce0                . = ALIGN (0x4)
+                0x1fff1ce0                _etext = .
 
-.vfp11_veneer   0x1fff1c5c        0x0
+.vfp11_veneer   0x1fff1ce0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x1fff1c5c        0x0
+.v4_bx          0x1fff1ce0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x1fff1c5c        0x0
+.iplt           0x1fff1ce0        0x0
  .iplt          0x00000000        0x0 ./Project_Settings/Startup_Code/kinetis_sysinit.o
 
-.rel.dyn        0x1fff1c5c        0x0
+.rel.dyn        0x1fff1ce0        0x0
  .rel.iplt      0x00000000        0x0 ./Project_Settings/Startup_Code/kinetis_sysinit.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x1fff1c5c        0x0
-                0x1fff1c5c                __exidx_start = .
+.ARM            0x1fff1ce0        0x0
+                0x1fff1ce0                __exidx_start = .
  *(.ARM.exidx*)
-                0x1fff1c5c                __exidx_end = .
+                0x1fff1ce0                __exidx_end = .
 
-.ctors          0x1fff1c5c        0x0
-                0x1fff1c5c                __CTOR_LIST__ = .
+.ctors          0x1fff1ce0        0x0
+                0x1fff1ce0                __CTOR_LIST__ = .
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x1fff1c5c                __CTOR_END__ = .
+                0x1fff1ce0                __CTOR_END__ = .
 
-.dtors          0x1fff1c5c        0x0
-                0x1fff1c5c                __DTOR_LIST__ = .
+.dtors          0x1fff1ce0        0x0
+                0x1fff1ce0                __DTOR_LIST__ = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x1fff1c5c                __DTOR_END__ = .
+                0x1fff1ce0                __DTOR_END__ = .
 
-.preinit_array  0x1fff1c5c        0x0
-                0x1fff1c5c                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x1fff1ce0        0x0
+                0x1fff1ce0                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x1fff1c5c                PROVIDE (__preinit_array_end, .)
+                0x1fff1ce0                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x1fff1c5c        0x0
-                0x1fff1c5c                PROVIDE (__init_array_start, .)
+.init_array     0x1fff1ce0        0x0
+                0x1fff1ce0                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
-                0x1fff1c5c                PROVIDE (__init_array_end, .)
+                0x1fff1ce0                PROVIDE (__init_array_end, .)
 
-.fini_array     0x1fff1c5c        0x0
-                0x1fff1c5c                PROVIDE (__fini_array_start, .)
+.fini_array     0x1fff1ce0        0x0
+                0x1fff1ce0                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
-                0x1fff1c5c                PROVIDE (__fini_array_end, .)
+                0x1fff1ce0                PROVIDE (__fini_array_end, .)
 
 .data           0x20000000       0xb0
                 0x20000000                . = ALIGN (0x4)
@@ -632,24 +632,24 @@ OUTPUT(IF_K64F_UART_HW.elf elf32-littlearm)
  .debug_macinfo
                 0x0006918e    0x61d25 ./Sources/main.o
 
-.debug_line     0x00000000     0x17db
+.debug_line     0x00000000     0x17e4
  .debug_line    0x00000000      0x228 ./Project_Settings/Startup_Code/kinetis_sysinit.o
  .debug_line    0x00000228      0x2ab ./Project_Settings/Startup_Code/__arm_start.o
  .debug_line    0x000004d3      0x265 ./Project_Settings/Startup_Code/__arm_end.o
- .debug_line    0x00000738      0x288 ./Sources/main.o
- .debug_line    0x000009c0       0x94 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
- .debug_line    0x00000a54       0x8f C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
- .debug_line    0x00000ae3       0xcd C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
- .debug_line    0x00000bb0      0x2b4 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
- .debug_line    0x00000e64      0x2df C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
- .debug_line    0x00001143      0x1a9 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
- .debug_line    0x000012ec      0x11b C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
- .debug_line    0x00001407       0x7d C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
- .debug_line    0x00001484       0x83 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
- .debug_line    0x00001507       0x9f C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
- .debug_line    0x000015a6       0x67 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
- .debug_line    0x0000160d      0x125 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
- .debug_line    0x00001732       0xa9 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
+ .debug_line    0x00000738      0x291 ./Sources/main.o
+ .debug_line    0x000009c9       0x94 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(exit.o)
+ .debug_line    0x00000a5d       0x8f C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memset.o)
+ .debug_line    0x00000aec       0xcd C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__filll_mem.o)
+ .debug_line    0x00000bb9      0x2b4 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(printformat_.o)
+ .debug_line    0x00000e6d      0x2df C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(scanformat_.o)
+ .debug_line    0x0000114c      0x1a9 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(ctype_aeabi.o)
+ .debug_line    0x000012f5      0x11b C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(__strtoul.o)
+ .debug_line    0x00001410       0x7d C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strchr.o)
+ .debug_line    0x0000148d       0x83 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(strlen.o)
+ .debug_line    0x00001510       0x9f C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\libc.a(memchr.o)
+ .debug_line    0x000015af       0x67 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(gcc_ctor_dtor.o)
+ .debug_line    0x00001616      0x125 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(__arm_eabi_init.o)
+ .debug_line    0x0000173b       0xa9 C:/Freescale/CW MCU v10.7/MCU/ARM_GCC_Support/ewl/lib/armv7e-m/fpu\librt.a(ROMCopy.o)
 
 .debug_str      0x00000000      0xe64
  .debug_str     0x00000000      0x27e ./Project_Settings/Startup_Code/kinetis_sysinit.o

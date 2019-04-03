@@ -22,7 +22,7 @@ unsigned char aux_array[2];
 unsigned char rx_buffer[50];
 unsigned char msg_buffer[100];
 unsigned char read_msg[14] = {"AT+CMGR=0  \r\n"};
-unsigned char send_msg[4][25] = {"AT+CMGF=1\r\n","AT+CMGS=\"7221755140\"\r\n","Hello world",0x1A};
+unsigned char send_msg[4][25] = {"AT+CMGF=1\r\n","AT+CMGS=\"7221755140\"\r\n","Hello world\x1A"};//,"\x1A"};
 //CHECAR COMO MANDAR EL ASCII
 
 //ITERATORS FOR ARRAY USED FOR PARSING
@@ -49,18 +49,7 @@ int main(void)
 	ptr = &sendinfo[1][0];
 	UARTSEND
 	delay(1000);*/
-	ptr = &send_msg[0][0];
-	UARTSEND
-	delay(100);
-	ptr = &send_msg[1][0];
-	UARTSEND
-	delay(100);
-	ptr = &send_msg[2][0];
-	UARTSEND
-	delay(100);
-	ptr = &send_msg[3][0];
-	UARTSEND
-	delay(100);
+	
 	for(;;)
 	{
 		if(flg&(0x4))
@@ -69,6 +58,24 @@ int main(void)
 			UARTSEND
 			flg&=~(1<<2);
 			vld_opt = 0;
+		}
+		if(flg&(0x40))
+		{
+			ptr = &send_msg[0][0];
+			UARTSEND
+			delay(1000);
+			ptr = &send_msg[1][0];
+			UARTSEND
+			delay(1000);
+			ptr = &send_msg[2][0];
+			UARTSEND
+			delay(1000);
+			ptr = &send_msg[3][0];
+			UARTSEND
+			
+			delay(100);
+			flg&=~(1<<6);
+			flg|=(1<<7);
 		}
 	}
 	return 0;
@@ -137,8 +144,6 @@ void UART3_Status_IRQHandler(void)
 				aux_flg = 3;
 				ptr_pos = 0;
 			}
-			
-			
 			if(!aux_flg)
 			{
 				aux_flg = 3;
@@ -151,15 +156,19 @@ void UART3_Status_IRQHandler(void)
 		}
 		else if(flg&(0x8))
 		{
-			if(flg&(0x10))
+			if(flg&(0x20))
 			{
 				*msg_ptr = UART3_D;
 				msg_ptr++;
 			}
-			if(flg&(0x10) && UART3_D == 0)
-			{
-				flg &=~(1<<3);
+			if(flg&(0x20) && UART3_D == '\n'){
+				flg = 0;
+				flg = (1<<6);
 				vld_opt = 0;
+			}
+			if(flg&(0x10) && UART3_D == '\n')
+			{
+				flg|=(1<<5);
 			}
 			if(UART3_D == '\n')	flg|=(1<<4);
 		}
