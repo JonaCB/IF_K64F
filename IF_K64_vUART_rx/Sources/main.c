@@ -1,6 +1,23 @@
 #include "derivative.h" /* include peripheral declarations */
+// FUNCTION HEADERS
+void vUART_Rxinit(void);
 
 unsigned char dato;
+
+int main(void)
+{
+	vUART_RXInit();
+	for(;;);
+	return 0;
+}
+
+void vUART_Rxinit(void)
+{
+	//Configurar input capture: pin,timer,input capture
+	
+}
+
+
 void interrupt_IC_OC(void)
 {
 	//apagar bandera
@@ -31,24 +48,4 @@ void interrupt_IC_OC(void)
 			//Cfg IC flanco de bajada
 		}
 	}
-}
-
-void vUART_Rxinit(void)
-{
-	//Configurar input capture: pin,timer,input capture
-}
-
-
-int main(void)
-{
-	int counter = 0;
-	
-	
-	
-	
-	for(;;) {	   
-	   	counter++;
-	}
-	
-	return 0;
 }

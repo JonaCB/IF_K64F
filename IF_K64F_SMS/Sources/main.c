@@ -1,183 +1,228 @@
 #include "derivative.h" /* include peripheral declarations */
 
-unsigned char mens1[]={"AT\r\n"};
-unsigned char cmpmens2[]={"OK\r\n"};
-unsigned char mens3[]={"AT+CMGF=1\r\n"};
-unsigned char mens4[]={"AT+CMGS=\"3339566255\"\r\n"};
-unsigned char sms[]={"TEST\r\n"};
-unsigned char buffer[80];
-unsigned char cmpmens1[]={">"};
-unsigned char temp;
+//DEFINES
+#define LLAMAJONA "ATD7221755140;\r\n"
+#define CUELGAJONA "ATH\r\n"
+#define GOTMSG "+CMTI:"
+#define READMSG "+CMGR:"
+#define UARTSEND UART3_C2 |= (1<<6)+(1<<3);
 
+//POINTERS FOR TX AND RX
+unsigned char *ptr;
+unsigned char *rx_ptr;
+unsigned char *msg_ptr;
+unsigned char *aux_ptr;
+unsigned char flg = 0;		//bit 0 = unrecognized chain, bit 1 = about to rx the msg number
+unsigned char aux_flg = 0b00000011;
 
+//ARRAYS
+unsigned char sendinfo[2][18] = {LLAMAJONA, CUELGAJONA};
+unsigned char rx_info[2][9] = {GOTMSG,READMSG};
+unsigned char aux_array[2];
+unsigned char rx_buffer[50];
+unsigned char msg_buffer[100];
+unsigned char read_msg[14] = {"AT+CMGR=0  \r\n"};
+unsigned char send_msg[4][25] = {"AT+CMGF=1\r\n","AT+CMGS=\"7221755140\"\r\n","Hello world\x1A"};//,"\x1A"};
+//CHECAR COMO MANDAR EL ASCII
 
-void vUART_init(void)
-{
-	SIM_SCGC4=0x00000C00; //Hab clk UART0 y UART1
-	UART0_BDH=0;
-	UART0_BDL=11;   //115200 bps
-	UART1_BDH=0;
-	UART1_BDL=11;    //115200 bps
+//ITERATORS FOR ARRAY USED FOR PARSING
+unsigned char i;
+unsigned char j;
+unsigned char ptr_pos = 0;
+unsigned volatile char vld_opt = 0;
 
-	UART0_C2=12; // bit 3: Hab Tx, bit 2: Hab Rx
-	UART1_C2=12;
+unsigned char tmp;
 
-	//Pines
-	SIM_SCGC5=0x00000C00; //Hab clk PORTB (PB16 y 17 son Rx y Tx) y PORTC
-	PORTB_PCR16=0x00000300; //Hab clk PB16 Rx
-	PORTB_PCR17=0x00000300; //Hab clk PB17 Tx
-	PORTC_PCR3=0x00000300; //Hab clk PC3 Rx
-	PORTC_PCR4=0x00000300; //Hab clk PC4 Tx
-
-	SIM_SCGC5|=0x00002400; //Habilitar reloj
-
-}
-
-void vUART_send (unsigned char dato)
-{
-	do{}while (!(UART1_S1&0x80));
-	UART1_D=dato;  
-}
-
-void unosnops(void)
-{
-	unsigned int i = 120;
-	while(--i){
-		__asm("nop");		//4.7 us min
-	};
-}
-
-void vUART_send_msg_AT (void)
-{
-	unsigned char i=0;
-	do{
-		vUART_send(mens1[i]);
-		//i++;
-	}while (mens1[++i]!=0);
-}
-
-void vUART_send_msg_CMGF (void)
-{
-	unsigned char i=0;
-	do{
-		vUART_send(mens3[i]);
-		//i++;
-	}while (mens3[++i]!=0);
-}
-
-void vUART_send_msg_CMGS (void)
-{
-	unsigned char i=0;
-	do{
-		vUART_send(mens4[i]);
-		//i++;
-	}while (mens4[++i]!=0);
-}
-
-void vUART_send_SMS (void)
-{
-	unsigned char i=0;
-	do{
-		vUART_send(sms[i]);
-		//i++;
-	}while (sms[++i]!=0);
-}
-
-void vUART_send_CTRLZ (void)
-{
-		vUART_send(0x1A);	
-}
-
-unsigned char u8parser1 (void)  //">"
-{
-  unsigned char i=0;
-  //unsigned char j=0;
-  unsigned long cont;
-  unsigned char temp;
-  do{
-    cont=0;
-    do{}while ((!(UART1_S1&0x20))&& (++cont<=1000000));
-    
-    if (cont!=1000000)
-    {
-    	temp=UART1_D;
-    	UART0_D=temp;
-     
-      if (cmpmens1[i]==temp) i++;
-      else i=0;
-    }
-  }while (cmpmens1[i]!=0);
-  if (cont==1000000) return 0;
-  else return 1;
-}
-
-unsigned char u8parser2 (void)  //"OK"
-{
-	unsigned char i=0;
-	unsigned char j=0;
-	unsigned long cont;
-	do{
-		cont=0;
-		do{}while ((!(UART1_S1&0x20))&& (++cont<=10000000));
-		if (cont!=10000000)
-		{   temp=UART1_D; 
-			UART0_D=temp;
-			
-			if(cmpmens2[i]==temp){
-				i++;
-			}
-			else{
-				i=0;
-			}
-			buffer[j++]=UART1_D;
-		if (cmpmens2[i]==UART1_D) i++;
-		else i=0;
-		}
-	}while ((cmpmens2[i]!=0)&&(++cont<=10000000));
-	if (cont==1000000) return 0;
-	else return 1;
-}
+// FUNCTION HEADERS
+void delay(unsigned long tiempo_ms);
+void UART_init(void);
 
 
 int main(void)
 {
-	vUART_init();
+	UART_init();
+	rx_ptr = rx_buffer;
+	msg_ptr = msg_buffer; 
+	/*ptr = &sendinfo[0][0];
+	UARTSEND
+	delay(10000);
+	ptr = &sendinfo[1][0];
+	UARTSEND
+	delay(1000);*/
 	
-	vUART_send_msg_AT();
-	unosnops();
-	vUART_send_msg_CMGF();
-	unosnops();
-	vUART_send_msg_CMGS();
-	unosnops();
-	vUART_send_SMS();
-	unosnops();
-	vUART_send_CTRLZ();
-	/*
+	for(;;)
+	{
+		if(flg&(0x4))
+		{
+			ptr = read_msg;
+			UARTSEND
+			flg&=~(1<<2);
+			vld_opt = 0;
+		}
+		if(flg&(0x40))
+		{
+			ptr = &send_msg[0][0];
+			UARTSEND
+			delay(1000);
+			ptr = &send_msg[1][0];
+			UARTSEND
+			delay(1000);
+			ptr = &send_msg[2][0];
+			UARTSEND
+			delay(1000);
+			ptr = &send_msg[3][0];
+			UARTSEND
+			
+			delay(100);
+			flg&=~(1<<6);
+			flg|=(1<<7);
+		}
+	}
+	return 0;
+}
+
+void UART_init(void)
+{
+	//ENABLE UART INTERFACE CLOCK
+	SIM_SCGC4 |= (1<<13);
+	SIM_SCGC5 |= (1<<11)+(1<<0);
 	
-	//if(u8parser1()==1){
-	delay();
-	vUART_send_msg_AT();
-	if (u8parser2()==1) //OK
-	{	
-		delay();
-		vUART_send_msg_CMGF();
-		if (u8parser2()==1) //OK
-		{	
-			delay();
-			vUART_send_msg_CMGS();
-			if (u8parser1()==1) //>
+	//CONFIGURE BAUDRATE
+	UART3_BDH=0;		  
+	UART3_BDL=137;				
+	
+	//ENABLE RX AND TX
+	//UART3_C2 |= (1<<5);		//RXIEN if RDRF
+	UART3_RWFIFO = 0x01;
+	UART3_C2 = (1<<5)+0x0C;
+	UART3_D = 0;
+	UART3_C2 |= 0x40;
+	
+	//PORT B16 ENABLED AS RX
+	PORTC_PCR16=0x00000300;
+	//PORT B17 ENABLED AS TX
+	PORTC_PCR17=0x00000300;
+	
+	//ENABLE INTERRUPTS
+	NVICICER1|= (1<<(37%32));
+	NVICISER1|= (1<<(37%32));
+}
+
+void UART3_Status_IRQHandler(void)
+{
+	if(UART3_S1 & (0x20))
+	{
+		if(!vld_opt)
+		{
+			//ITERATOR OF AUXILIARY ARRAY
+			for(i = 0; i < 2; i++)
 			{
-				delay();
-				vUART_send_SMS();
-				vUART_send_CTRLZ();
-				if (u8parser2()==1) //OK
-				{	
-					return 1;
+				if(!(aux_flg&(1<<i)))
+				{
+					flg |= 1;
 				}
+				if(!(flg&(0x1)))
+				{
+					if(UART3_D != rx_info[i][ptr_pos])
+					{
+						aux_flg&=~(1<<i);
+					}
+				}
+				flg &= ~(1<<0);
+			}
+			ptr_pos++;
+			if(aux_flg == 1) 
+			{
+				vld_opt = 1;
+				aux_ptr = &read_msg[8];
+				aux_flg = 3;
+				ptr_pos = 0;
+			}
+			else if (aux_flg == 2)
+			{
+				vld_opt = 2;
+				aux_flg = 3;
+				ptr_pos = 0;
+			}
+			if(!aux_flg)
+			{
+				aux_flg = 3;
+				ptr_pos = 0;
+			}
+			
+			//*rx_ptr = UART3_D;
+			//UART3_D = *rx_ptr;
+			(void) UART3_S1;
+		}
+		else if(flg&(0x8))
+		{
+			if(flg&(0x20))
+			{
+				*msg_ptr = UART3_D;
+				msg_ptr++;
+			}
+			if(flg&(0x20) && UART3_D == '\n'){
+				flg = 0;
+				flg = (1<<6);
+				vld_opt = 0;
+			}
+			if(flg&(0x10) && UART3_D == '\n')
+			{
+				flg|=(1<<5);
+			}
+			if(UART3_D == '\n')	flg|=(1<<4);
+		}
+		else if(vld_opt == 1)
+		{
+			tmp = UART3_D;
+			if(flg&(0x2))
+			{
+				*aux_ptr = UART3_D;
+				if((aux_ptr == &read_msg[10])||UART3_D == '\n')
+				{
+					flg &= ~(1<<1);
+					flg |= (1<<2);
+				}
+				aux_ptr++;
+			}
+			if(tmp == ',')
+			{
+				flg |= (1<<1);
+			}
+		}
+		else if(vld_opt == 2)
+		{
+			if(tmp >= 8) 
+			{
+				flg|=(1<<3);
+				tmp = 0;
+			}
+			if(UART3_D == '"')
+			{
+				tmp++;
 			}
 		}
 	}
+	if(UART3_S1 &(0x40))
+	{
+		(void) UART3_S1;
+		UART3_D = *ptr++;
+		if(*ptr == 0)
+		{
+			UART3_C2 &= ~(1<<6);
+			UART3_C2 &= ~(1<<3);
+			//UART3_D = 0;
+			ptr = &sendinfo[0][0];
+		}
+	}
+}
 
-	*/
-	return 0;
+void delay(unsigned long tiempo_ms)
+{
+	LPTMR0_PSR|=0b00000101;	//Prescaler bypass y LPO de CLK
+	LPTMR0_CMR=tiempo_ms;	//Asignar tiempo_ms a registro con valor a comparar
+	LPTMR0_CSR|=0b00000001;	//Timer Enable 
+	do{}
+	while(!(LPTMR0_CSR&0b10000000));				//Esperar la bandera TCF
+	LPTMR0_CSR |= (1<<7);
 }
